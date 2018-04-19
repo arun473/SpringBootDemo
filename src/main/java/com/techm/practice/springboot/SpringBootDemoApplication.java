@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @SpringBootApplication
+@RestController
 public class SpringBootDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
