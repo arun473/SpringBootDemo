@@ -1,7 +1,8 @@
 package com.example.multithreading;
 
 public class NetworkPrinterA implements NetworkPrinter{
-    @Override
+    private Object lock = new Object();
+   /* @Override
     public synchronized void printPage(String threadid) {
         snooze(threadid);
         System.out.println("NetworkPrinterA : Page Printed");
@@ -11,6 +12,23 @@ public class NetworkPrinterA implements NetworkPrinter{
     public synchronized void faxPage(String threadid) {
         snooze(threadid);
         System.out.println("NetworkPrinterA : Page Faxed");
+    }*/
+
+    @Override
+    public  void printPage(String threadid) {
+        synchronized (this){
+            snooze(threadid);
+            System.out.println("NetworkPrinterA : Page Printed");
+        }
+
+    }
+
+    @Override
+    public  void faxPage(String threadid) {
+        synchronized (lock) {
+            snooze(threadid);
+            System.out.println("NetworkPrinterA : Page Faxed");
+        }
     }
 
     public static void snooze(String threadid){
