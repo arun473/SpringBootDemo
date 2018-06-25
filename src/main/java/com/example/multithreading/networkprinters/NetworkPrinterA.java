@@ -1,4 +1,4 @@
-package com.example.multithreading;
+package com.example.multithreading.networkprinters;
 
 public class NetworkPrinterA implements NetworkPrinter{
     private Object lock = new Object();

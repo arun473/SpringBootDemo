@@ -1,4 +1,4 @@
-package com.example.multithreading;
+package com.example.multithreading.networkprinters;
 
 public interface NetworkPrinter {
     void printPage(String threadid);

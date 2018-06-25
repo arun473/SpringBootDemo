@@ -1,4 +1,4 @@
-package com.example.multithreading;
+package com.example.multithreading.networkprinters;
 
 public class RunnableThreadOne implements Runnable{
 
