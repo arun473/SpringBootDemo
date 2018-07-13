@@ -13,7 +13,8 @@ public class MyCallable implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
+        System.out.println("---------------------------------------------------Delayed by call()");
         //return the thread name executing this callable task
         return Thread.currentThread().getName();
     }
@@ -31,6 +32,7 @@ public class MyCallable implements Callable<String> {
             //add Future to the list, we can get return value using Future
             list.add(future);
         }
+        System.out.println("---------------------------------------------------future list stored");
         for(Future<String> fut : list){
             try {
                 //print the return value of Future, notice the output delay in console
